@@ -17,8 +17,8 @@ var shopper = {
         else if (price > shopper.money) {                          //Check if price is too much to afford
             return console.log("Sorry you don't have enough for that")
         }
-        else {                                                    //Otherwise subtract price from money and 
-        shopper.money -= price;
+        else {                                                    //Otherwise subtract price from money and add it
+        shopper.money -= price;                                   //to the grocery cart
         shopper.addToCart(item);
         return console.log("Thank you for your business")
         }
@@ -40,4 +40,13 @@ console.log(shopper.groceryCart);
 shopper.buySomething(500, "soup");
 console.log(shopper.money);
 console.log (shopper.groceryCart);
+
+// Should console log that this is not a number
+
+shopper.buySomething("apple", "bacon");
+console.log(shopper.money);
+console.log(shopper.gerceryCart);
+
+// I did not check to see if the second value passed to the buysomething function was a string, through I know that I should
+// for good use cases
 
