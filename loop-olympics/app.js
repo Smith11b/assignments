@@ -1,3 +1,5 @@
+//Preliminary Challenges--------------------
+
 for(i = 0; i < 10; i++) {
     console.log(i);
 }
@@ -12,6 +14,8 @@ for(i = 0; i < fruit.length; i++) {
     console.log(fruit[i]);
 }
 
+
+//Bronze Medal --------------------------
 var num = [];
 
 for(i = 0; i < 10; i++) {
@@ -19,6 +23,8 @@ for(i = 0; i < 10; i++) {
 }
 console.log(num)
 
+
+//Silver Medal --------------------------
 var peopleArray = [
     {
       name: "Harrison Ford",
