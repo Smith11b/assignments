@@ -10,11 +10,14 @@ just fix the existing ones.
 // Written by Kent, Clark
 
 var enemies=["Lex", "Batman", "Darkseid", "Brainiac", "General Zod", "Doomsday"];
+// Oporators including "=" need space around them
 
 function whoWins(isThereKryptonite, enemyName) {
     if (!isThereKryptonite) {
     return "Superman beats " +enemyName+ ", of course";
+        // indent this line ^^ and remember your spaces around operators 
     } else {
+        // indent the following line and remember your spaces around operators
     return "Depends on how quick Superman can get rid of the Kryptonite. "+ enemyName +" could possibly win this one.";
     }
 }
@@ -46,3 +49,5 @@ while (isClarkKent){
         isClarkKent = false;
         isSuperman = true;
         console.log("Now I'm Superman!");}}
+
+// Pretty good! Line 51 has to curly brackets that should be on separate line. 
