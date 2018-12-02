@@ -1,0 +1,64 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    max-width: 900px;
+    margin: auto;
+}
+
+header{
+    display: inline-block;
+
+}
+
+headline {
+    display: inline-block;
+    width: 480px;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 50px;
+    font-weight: bold;
+    
+}
+
+h4 {
+    margin: auto;
+    margin-top: 20px;
+    
+}
+
+statbar {
+    height: 20px;
+    max-width: 800px;
+}
+
+
+
+/* ID Styles=============================*/
+
+#left-header-div {
+    display: inline-block;
+    height: 124px;
+    max-width: 200px;
+    text-align: center;
+    border: solid;
+    border-width: 1px;
+    padding: 10px;
+    margin: auto;
+    
+
+}
+
+#header-p {
+    padding-top: 25px;
+    width: 140px;
+    
+   
+
+}
+
+#right-header-div {
+    max-width: 200px;
+    display: inline-block;
+
+}
