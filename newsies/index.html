@@ -10,68 +10,84 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="styles.css">
+        <link href="https://fonts.googleapis.com/css?family=Roboto|Spirax|UnifrakturCook:700" rel="stylesheet">
+
     </head>
     <body>
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        
         <header>
-            <div id = "left-header-div">
-                <p id = "header-p">"All the News That's Fit to Print"</p>
-            </div>
-                
-            <headline>The New York Times</headline>
-            
-            <div id = "right-header-div">
-                <h4>LATE CITY EDITION</h4>
+            <section id = "left-head">
+                <h4>All The News That's Fit to Print</h4>
+            </section>
+            <section id = "main-head">
+                <h1>The New York Times</h1>
+            </section>
+            <section id = "right-head">
                 <p>Weather: Rain, warm today through tonight. Sunny, Pleasant tonight.
-                   Temp Ranges today: 84-90. Tomorrow's ranges 73-76
-                </p>
-            </div>
-            
+                   Temp Ranges today: 84-90. Tomorrow's ranges 73-76</p>
+            </section>
         </header>
 
-        <statbar>VOL CXVIII NO. 40.721    @ The New York Times Company   New York Monday July 21, 1969       10 Cents</statbar>
+        <!-- Header End !-->
+
+        <statbar>
+            <p>VOL CXVIII NO. 40.721 &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;    @ The New York Times Company &nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp; &nbsp;&nbsp;   New York Monday July 21, 1969    &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  10 Cents</p>
+        </statbar>
         
-        
+        <!-- Status Bar End !-->
 
-        <frontpage>
+        <headline id = "main">
+            <h1 id = "main-top">MEN WALK ON MOON</h1>
+            <h2 id = "main-sub">ASTROUNAUTS LAND ON PLAIN; COLLECT ROCKS PLANT FLAG</h2>
+        </headline>
 
-            <mainhead>
-                <h1>MEN WALK ON THE MOON</h1>
-                <subhead><h3>Atronauts land on moon; collect rocks, plant flag</h3></subhead>
-            </mainhead>
+        <!-- Headline End !-->
 
-            <subhead id = "subhead-left">Voice From The Moon: 'Eagle Has Landed'</subhead>
-            <content>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-                    when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
-                    It has survived not only five centuries, but also the leap into electronic typesetting, remaining 
-                    essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing 
-                    Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including 
-                    versions of Lorem Ipsum.
-            </content>
+        <content>
+            <section class = "content">
+                <h3>Voice From The Moon: Eagle Has Landed</h3>
+                <p id = "left-p">Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+                        when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
+                        It has survived not only five centuries, but also the leap into electronic typesetting, remaining 
+                        essentially unchanged. Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+                        when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
+                        It has survived not only five centuries, but also the leap into electronic typesetting, remaining 
+                        essentially unchanged. Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+                        when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
+                        It has survived not only five centuries, but also the leap into electronic typesetting, remaining 
+                        essentially unchanged</p>
+            </section>
+            <section id = "main-content-img">
+                <img src= "img/main-img.jpg">
+            </section>
+            
+            <section class= "content2">
+                <h3>A Powdery Surface Is Closely Explored</h3>
+                <p id = "right-p">Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+                        when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
+                        It has survived not only five centuries, but also the leap into electronic typesetting, remaining 
+                        essentially unchanged. Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+                        when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
+                        It has survived not only five centuries, but also the leap into electronic typesetting, remaining 
+                        essentially unchanged. Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+                        when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
+                        It has survived not only five centuries, but also the leap into electronic typesetting, remaining 
+                        essentially unchanged</p>
+            </section>
+            
+        </content>
 
-            <img src = "">
+    
 
-            <subhead id = "subhead-right">
-                <h3>A Powdery Surface is Closely Explored</h3>
-                <byline>Jorn Noble Wilferd</byline>
-            </subhead>
-            <content>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-                    when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
-                    It has survived not only five centuries, but also the leap into electronic typesetting, remaining 
-                    essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing 
-                    Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including 
-                    versions of Lorem Ipsum.
-            </content>
 
-           
-        </frontpage>
         
 
 
