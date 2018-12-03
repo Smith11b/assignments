@@ -22,7 +22,7 @@ function insertDecimal(){
     insert(".");
 }
 
-function clear(){
+function clearInput(){
     document.getElementById("exp").value = " ";
 }
 
