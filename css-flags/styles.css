@@ -108,7 +108,6 @@
 
 .white-square-switz {
     position: relative;
-    
     background-color: white;
     transform: translate(-50%, -50%);
 }
@@ -128,7 +127,3 @@
     bottom: 30%;
 }
 
-#white-3 {
-    bottom: 33%;
-    left: 33%;
-}

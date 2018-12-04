@@ -29,12 +29,18 @@ function clearInput(){
 
 function equals(){
     var expression = document.getElementById("exp").value;
-    var operation = eval(expression)
-    if(operation === undefined){
+    try{
+        if(/\/\//.test(expression)) throw Error("Invalid Expression");
+        var operation = eval(expression);
+        document.getElementById("exp").value = eval(expression);
         
-        alert("Sorry cannot compute, self destruction in 5... 4... 3... 2... 1...");
-    } else {
-        document.getElementById("exp").value = operation;
+    } catch(err){
+        alert(err.message)
+
     }
+    console.log(operation);
+    
+    
 }
+
 
