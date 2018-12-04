@@ -49,6 +49,7 @@ header {
 /* Status Line Bar Start */
 
 statbar p {
+    margin-top: 15px;
     text-align: center;
     border: 1px solid;
 }
@@ -103,7 +104,6 @@ content {
 
 .content2 {
     display: inline-block;
-    float: right;
     width: 24%;
     text-align: justify;
     padding-right: 1.2%;
