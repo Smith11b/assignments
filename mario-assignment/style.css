@@ -51,7 +51,8 @@ img {
 
 .post {
     margin-top: 20px;
-    border-bottom: 1px solid 
+    border-bottom: 1px solid;
+    height: 200px;
     
   
 
@@ -60,6 +61,7 @@ img {
 .right-side {
     display: inline-block;
     vertical-align: top;
+    margin-left: 150px;
 }
 
 button {
