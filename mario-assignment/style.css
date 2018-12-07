@@ -1,0 +1,83 @@
+header {
+    width: 800px;
+    height: 450px;
+    background: url(marioheader.jpg) center no-repeat;
+    margin: auto;
+}
+
+.hero {
+    width: 800px;
+    height: 450px;
+    
+    
+}
+
+#hero-head {
+    width: 400px;
+    text-align: center;
+    margin: auto;
+    color: white;
+    position: relative;
+    top: 280px;
+    
+}
+
+#hero-head h1 {
+    font-size: 40px;
+    background-color: #3a4146
+}
+
+
+body {
+    background-color: #3a4146;
+}
+    
+    
+
+
+main {
+    width: 800px;
+    margin: auto;
+    background-color: rgb(255, 255, 255);
+    
+
+
+}
+
+img {
+    width: 200px;
+    height: 200px;
+}
+
+.post {
+    margin-top: 20px;
+    border-bottom: 1px solid 
+    
+  
+
+}
+
+.right-side {
+    display: inline-block;
+    vertical-align: top;
+}
+
+button {
+    background-color: rgb(255, 153, 0);
+    color: white;;
+    font-size: 30px;
+    border: none;
+    border-radius: 2px;
+    padding: 10px;
+    border: 0px solid white;
+    transition: .2s ease-in-out;
+    
+    
+}
+
+button:hover {
+    border: 2px solid white;
+    transition: .3s ease-in-out;
+ 
+    
+}
