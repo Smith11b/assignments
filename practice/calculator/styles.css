@@ -36,6 +36,10 @@ body {
 
 }
 
+.button-style:active {
+    background-color: yellow;
+}
+
 
 #equal {
     -webkit-appearance: button;
