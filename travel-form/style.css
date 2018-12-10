@@ -1,0 +1,98 @@
+body {
+    height: 800px;
+    widows: 100%;
+    background: url("pexels-photo-1188473.jpeg");
+    background-size: 100% 100%;
+}
+
+#left {
+    width: 300px;
+    height: 475px;
+    background-color: white;
+    display: inline-block;
+    border-radius: 8px;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+}
+
+#destination {
+    font-size: 20px;
+    margin-left: 15px;
+    background-color: rgb(226, 223, 223);
+    width: 250px;
+}
+
+#child {
+    margin-bottom: 40px;
+
+}
+
+button {
+    font-size: 30px;
+    border-radius: 5px;
+    background-color: rgb(73, 153, 218);
+    color: white;
+    padding: 6px;
+}
+
+#yes {
+    margin-left: 0px;
+}
+#no {
+    margin-left: 0px;
+}
+
+#first-name-div {
+    display: inline-block;
+    width: 112px;
+    float: left;
+}
+
+#last-name-div {
+    display: inline-block;
+    margin-left: 40px;
+}
+
+#age-div {
+    display: inline-block;
+    width: 112px;
+    float: left;
+}
+#room-div {
+    width: 112px;
+    display: inline-block;
+}
+#adult-div {
+    width: 112px;
+    display: inline-block;
+}
+
+input {
+    font-size: 25px;
+    margin-left: 10px;
+    margin-top: 0px;
+    border: none;
+    background-color: rgb(233, 230, 230);
+    width: 100px;
+}
+
+#right {
+    width: 600px;
+    color: white;
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 80px;
+    font-family: 'Roboto', sans-serif;
+    margin-top: 100px;
+}
+
+#right h1 {
+    font-size: 50px;
+}
+
+main {
+    width: 900x;
+    height: 400px;
+    margin-left: 200px;
+    margin-top: 100px;
+}
