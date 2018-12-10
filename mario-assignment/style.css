@@ -1,3 +1,5 @@
+/* Try organizing your css by specificity, e.g. use html selectors at the top, followed by classes, and last id's */
+
 header {
     width: 800px;
     height: 450px;

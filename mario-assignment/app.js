@@ -19,7 +19,7 @@ total.addEventListener("click", function (e) {
     var pay = (+goomba.tag.value * +goomba.price) + (+cheeps.tag.value * +cheeps.price) + (+bombs.tag.value * +bombs.price);
     h1.innerText = "Mario made: " + pay + " Coins";
     
-
+// Nice clean, organized, simple code! Try to get rid of some of the extra unnecessary empty lines, though.
     
 })
 
