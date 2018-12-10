@@ -83,3 +83,15 @@ button:hover {
  
     
 }
+
+footer {
+    background-color: rgb(84, 144, 168);
+    color: white;
+    height: 75px
+
+}
+
+footer p {
+    display: inline-block;
+    margin: 30px 30px 10px 30px;
+}
