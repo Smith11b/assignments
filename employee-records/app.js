@@ -6,13 +6,15 @@ function Employee(name, salary, jobTitle){
     this.salary = salary;
     this.jobTitle = jobTitle;
     this.hours = "Full Time";
-    this.print = printEmployeeForm;
+    
 }
 
 
 function printEmployeeForm(){
     console.log(this);
 }
+
+Employee.prototype.print = printEmployeeForm;
 
 var mark = new Employee("Mark", 105000, "Software Dev");
 var mike = new Employee("Mikey", 50000, "Janitor");
