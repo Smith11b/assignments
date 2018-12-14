@@ -2,10 +2,9 @@ var readline = require("readline-sync");
 
 // Player and game setup =======================================
 
-var playerName = readline.question("What is your name Padawan?\n");
+var playerName = readline.question("What is your name Padawan?");
 
 var isAlive = true; // Track if the player is alive
-var enemy;
 var isEnemyHere = false;
 var hasWon = false; // Track if the player has won
 var enemyTypes = ["Sith Apprentice", "Sith Lord", "Sith Master"];
@@ -39,22 +38,21 @@ var lootDrops = [{                                             // This is an arr
     
     
     function Player() {                                      // The player prototype
-        this.name = playerName;
-        this.hp = 100;
-        this.attack = 10;
-        this.inventory = [];
-        this.force = 20;  
+        name = playerName;
+        hp = 100;
+        attack = 10;
+        inventory = [];
+        force = 20;
+        enemiesKilled = 0;  
     };
     
-    var player = new Player(); 
-    console.log(player);                             //instance a new player called player.
+    var player = new Player();                               //instance a new player called player.
 
 function Enemy(name, level){             /// The Enemy prototype
     this.name = name;
-    this.hp = 10 * level;
     this.attack = 3 * level;
+    this.force = 10 * this.level;
     this.level = level;
-    this.force = 10 * level;
 };
 
 // Game Utility Functions
@@ -62,7 +60,6 @@ function Enemy(name, level){             /// The Enemy prototype
 function getRandomElement(arr){
     var index = Math.floor(Math.random() * arr.length); // takes an array and returns an item at a randomn index
     return arr[index];
-    console.log(index);
 }
 
 function randomEnemyGenerator(arr){
@@ -119,48 +116,39 @@ function print(){
 
 function walk(){
     if(Math.floor(Math.random() < .40)){
-        enemy = randomEnemyGenerator(enemyTypes);
-        console.log("A " + enemy.name + " is standing here, you feel the dark side pooring out of him\n");
+        var enemy = randomEnemyGenerator(enemyTypes);
+        console.log("A " + enemy.name + " is standing here, you feel the dark side pooring out of him\n")
         isEnemyHere = true;
-        console.log(enemy);
+        
     }
     
 }
 
 function fight(){
+    var loop = setInterval(function(){      //Set an interval so player can see the fight. code runs ever second.
+        if (player.hp <= 0){                //if the player is dead, tell him he's dead, and change isAlive to false. Then break the interval.
+            console.log(enemy.name + " Just killed you. You have died");
+            isAlive = false;
+            clearInterval(loop)
+        }
 
-    while(true){
+        if (enemy.hp <= 0){                  //Check if the enemy is dead. If so. Tell the player and add randomn item
+            console.log("You ended a" + enemy.name + "'s life") // to the players inventory. Also add 1 to players kill count.
+            var newItem = getRandomElement(lootDrops)
+            console.log("You just got a " + newItem + "!");
+            player.inventory.push(newItem);
+            enemiesKilled++;
+            clearInterval(loop);
+        }
+
+        randomAttacks(playerAttacks);
+        randomAttacks(enemyAttacks);
 
         
-        
-        if (player.hp <= 0){                //if the player is dead, tell him he's dead, and change isAlive to false. Then break the loop.
-        console.log(enemy.name + " Just killed you. You have died");
-        isAlive = false;
-        break;
-        
-    }
-    
-    if (enemy.hp <= 0){                  //Check if the enemy is dead. If so. Tell the player and add randomn item
-        console.log("You ended a" + enemy.name + "'s life") // to the players inventory. Also add 1 to players kill count.
-        var newItem = getRandomElement(lootDrops)
-        console.log("You just got a " + newItem + "!");
-        player.inventory.push(newItem);
-        player.enemiesKilled++;
-        break;
-    
-    }
-    
-    
-    
-    randomAttacks(playerAttacks);
-    randomAttacks(enemyAttacks);
+    }, 1000)
+
+
 }
-}
-    
-    
-    
-
-
 
 function run(){
     var runChance = Math.floor(Math.random() * 10);
@@ -178,7 +166,7 @@ function run(){
 
 // Enemy attacks =================================================
 
-function darkSlash(){
+function darkslash(){
     if(Math.random() > .333){
         console.log(this.name + " slashes you for " + this.attack + "damage!" + " Health = " + this.hp + "\n")
         player.hp -= this.attack;
@@ -230,7 +218,7 @@ function forceLightning(){
 
 // Appending enemy attacks to enemy prototype
 
-Enemy.prototype.slash = darkSlash;
+Enemy.prototype.slash = darkslash;
 Enemy.prototype.forcePush = darkForcePush;
 Enemy.prototype.forceChoke = forceChoke;
 Enemy.prototype.forceLightning = forceLightning;
@@ -252,7 +240,7 @@ function forcePush(enemy){
     if(this.force < 5){
         console.log("You put your hand out to force push " + enemy.name + "but you don't have enough energy" + "\n");
     }
-    if(Math.random() > .50){
+    if(Math.random() > .20){
         enemy.hp -= this.attack * this.level * 2;
         console.log("You put your hand out and force push " + enemy.name + " they slam into the wall! " + enemy.name + " takes " + (this.attack * this.level) + "damage!" + " Health = " + this.hp + "\n")
         this.force -= 5;
@@ -265,7 +253,7 @@ function lightsaberThrow(enemy){
     if(this.force < 15){
         console.log("You try use the force to throw your lightsaber at " + enemy.name + "but you don't have enough energy" + "\n");
     }
-    if(Math.random() > .50){
+    if(Math.random() > .20){
         enemy.hp -= this.attack * this.level * 2;
         console.log("You use the force to throw your lightsaber " + enemy.name + " it impales them! " + enemy.name + " takes " + (this.attack * this.level) + "damage!" + " Health = " + this.hp + "\n")
         this.force -= 15;
@@ -310,11 +298,15 @@ while(true){
         walk();
     }
     
-    if(input === "F" || input === "f"){
-      fight();
+    if (input === "F" || input === "f"){
+        if(isEnemyHere){
+            fight();        
+        } else{
+            console.log("No one is here but you\n");
+        }
     }
 
-    if(player.enemiesKilled === 3){            //Check if the kill count is 3 if it is, break the loop and set hasWon to true;
+    if(enemiesKilled === 3){            //Check if the kill count is 3 if it is, break the loop and set hasWon to true;
         hasWon = true;
         break;
     }
