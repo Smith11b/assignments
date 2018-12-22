@@ -101,7 +101,7 @@ function randomAttacks(arr) {
 function useItem(itemName, inventoryArr) {
     var hasItem = false;
     for (i = 0; i < inventoryArr.length; i++) {
-        if (itemName === inventoryArr[i].name) {
+        if (itemName === player.inventoryArr[i].name) {
             inventoryArr[i].useThis();
             hasItem = true;
 
