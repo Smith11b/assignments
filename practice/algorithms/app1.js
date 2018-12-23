@@ -73,3 +73,19 @@ function quickSort(arr){
 
 console.log(quickSort(array));
 
+array = [2, 4, 7, 7,3, 7, 4, 77, 23]
+
+function quikSort(arr){
+    if(arr.length < 2){
+        return arr;
+    }
+
+    const [pivot, ...rest] = arr;
+    const left = [];
+    const right = [];
+
+    rest.forEach(el => el < pivot ? left.push(el) : right.push(el));
+    return quikSort(left).concat(pivot).concat(quikSort(right));
+}
+
+console.log(quikSort(array));
