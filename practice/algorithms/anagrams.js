@@ -11,16 +11,12 @@
     return charMap;
 }
 
-
 function anagram(stringA, stringB){
-    let charMapA = makeCharacterMap(stringA);
-    let charMapB = makeCharacterMap(stringB);
     let firstString = stringA.replace(/[^\w]/g).toLowerCase()
     let secString = stringB.replace(/[^\w]/g).toLowerCase()
-
-
-   
-
+    let charMapA = makeCharacterMap(firstString);
+    let charMapB = makeCharacterMap(secString);
+    
     if(firstString.length !== secString.length){    // if the strings lengths aren't equal than they cannot be anagrams
         return false;                               // so return false
     } else {
