@@ -7,3 +7,17 @@ function vowels(str){
 
 
 
+function vowel2(str){
+    let count = 0;
+    let checker = "aeiou";
+    let newStr = str.toLowerCase();
+
+    for(let char of newStr){
+        if(checker.includes(char)){
+            count++
+        }
+    }
+    return count;
+}
+
+console.log(vowel2("hey girl whatsup"));
