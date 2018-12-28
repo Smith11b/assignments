@@ -88,3 +88,16 @@ function matrix(n) {
   
     return results;
   }
+
+
+  var merge = function(nums1, m, nums2, n) {
+    nums1.concat(nums2);
+    nums1.sort();
+    
+    for(char of nums1){
+        if(char === 0){
+            nums1.shift();
+        }
+    }
+    
+};
