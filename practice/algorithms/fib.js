@@ -6,8 +6,17 @@ function fib(n){
         num = arr[i-1] + arr[i -2];
         arr[i] = num;
     }
-
-    return arr[n -1];
+    return arr[arr.length-1];
 }
 
-console.log(fib(5))
+console.log(fib(10));
+
+
+function fibRecurse(n){
+    if(n < 2){
+        return n;
+    }
+    return fibRecurse(n - 1) + fibRecurse(n - 2);
+}
+
+console.log(fibRecurse(10));
