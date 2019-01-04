@@ -31,13 +31,6 @@ class LinkedList {
 
   getLast() {
     let node = this.head;
-
-    while (node) {
-      if (!node.next) {
-        return node;
-      }
-      node = node.next;
-    }
   }
 
   clear() {
@@ -50,5 +43,27 @@ class LinkedList {
     } else {
       this.head = this.head.next;
     }
+  }
+
+  removeLast() {
+    if (!this.head) {
+      return;
+    }
+    if (!this.head.next) {
+      this.head = null;
+      return;
+    }
+    let node = this.head;
+    while (node) {
+      if (!node.next.next) {
+        node.next = null;
+      }
+      node = node.next;
+    }
+  }
+
+  insertLast() {
+    const node = getLast();
+    node.next = new Node();
   }
 }
