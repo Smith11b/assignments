@@ -1,43 +1,54 @@
-
 class Node {
-    constructor(data, node = null){
-        this.data = data;
-        this.next = node;
-    }
+  constructor(data, node = null) {
+    this.data = data;
+    this.next = node;
+  }
 }
 
 class LinkedList {
-    constructor(){
-        this.head = null;
+  constructor() {
+    this.head = null;
+  }
+
+  insertFirst(data) {
+    this.head = new Node(data, this.head);
+  }
+
+  size() {
+    let counter = 0;
+    let node = this.head;
+
+    while (node) {
+      counter++;
+      node = node.next;
     }
+    return counter;
+  }
 
-    insertFirst(data){
-        this.head = new Node(data, this.head);
+  getFirst() {
+    return this.head;
+  }
+
+  getLast() {
+    let node = this.head;
+
+    while (node) {
+      if (!node.next) {
+        return node;
+      }
+      node = node.next;
     }
+  }
 
-    size(){
-       let counter = 0;
-       let node = this.head;
+  clear() {
+    this.head = null;
+  }
 
-       while (node) {
-           counter++;
-           node = node.next;
-       }
-       return counter;
+  removeFirst() {
+    if (!this.head) {
+      return;
+    } else {
+      this.head = this.head.next;
     }
-
-    getFirst(){
-        return this.head;
-    }
-
-    getLast(){
-        let node = this.head;
-
-        while(node){
-            if(!node.next){
-                return node;
-            }
-            node = node.next;
-        }
-    }
+  }
 }
