@@ -1,6 +1,6 @@
 import React from "react";
 
-let colors = ["green", "red", "orange", "white"];
+const colors = ["green", "red", "orange", "white"];
 
 function Card(props) {
   return (
