@@ -1,5 +1,6 @@
-{
-  let car = 0;
-  console.log(car);
+var rev = {
+  a(){return console.log("hey")}
 }
 
+
+rev.a();
