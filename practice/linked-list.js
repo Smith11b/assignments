@@ -62,8 +62,12 @@ class LinkedList {
     }
   }
 
-  insertLast() {
+  insertLast(data) {
     const node = getLast();
-    node.next = new Node();
+    if (node){
+      node.next = new Node(data);
+    } else {
+      this.head = new Node(data);
+    }
   }
 }
