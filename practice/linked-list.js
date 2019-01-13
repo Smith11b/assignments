@@ -70,4 +70,36 @@ class LinkedList {
       this.head = new Node(data);
     }
   }
+
+  getAt(index){
+    let node = this.head;
+    let counter = 0;
+    while (node){
+      if(counter === index){
+        return node;
+      }
+      counter++;
+      node = node.next;
+    }
+
+    return null;
+  }
+
+  removeAt(index){
+    if (!this.head) return null;
+    if (index === 0) {
+      this.head = this.head.next; return;}
+    let previous = this.getAt(index -1);
+    if(!previous.next){
+      return;}
+      previous.next = previous.next.next;
+
+    }
+
+    insertAt
+
+  }
+    
+
 }
+
