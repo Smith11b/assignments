@@ -96,10 +96,20 @@ class LinkedList {
 
     }
 
-    insertAt
+    insertAt(index, data){
+      if(index === 0){this.head = new Node(data, this.head); return;}
+      let prev = getAt(index -1) || this.getLast;
+      if(!prev){
+        return;
+      }
+      let node = new Node(data, prev.next);
+      prev.next = node;
+      
 
-  }
-    
+    }
 
 }
+    
+
+
 
