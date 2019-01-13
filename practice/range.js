@@ -13,4 +13,7 @@ Number.prototype[Symbol.iterator] = function*(){
 };
 
 
-console.log(...-10);
+var arr = [...10];
+
+
+console.log(arr);

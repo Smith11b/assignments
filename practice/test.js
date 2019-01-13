@@ -1,6 +1,2 @@
-var rev = {
-  a(){return console.log("hey")}
-}
+console.log(...10);
 
-
-rev.a();
