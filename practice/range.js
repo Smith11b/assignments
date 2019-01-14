@@ -13,7 +13,7 @@ Number.prototype[Symbol.iterator] = function*(){
 };
 
 
-var arr = [...10];
+var arr = [...11];
 
 
 console.log(arr);
