@@ -88,4 +88,32 @@ function quikSort(arr){
     return quikSort(left).concat(pivot).concat(quikSort(right));
 }
 
+function binarySearch(arr, num , start, end){
+    if(start > end){
+        return false;
+    }
+
+    let mid = Math.floor(start + end) / 2;
+    if(arr[mid]=== num) return true;
+
+    if (arr[mid] > num) {
+        return binarySearch(arr, num, start, mid)
+    } else {
+        return binarySearch(arr, num, mid + 1, end)
+    }
+
+
+}
+
+let myArr = [1, 4, 6, 7,9, 10, 30, 50]
+let myNum = 11
+
+if (binarySearch(myArr, myNum, 0, myArr.length -1)){
+    console.log("Found IT!")
+} else {
+    console.log("Not found")
+}
+
+
+
 console.log(quikSort(array));
