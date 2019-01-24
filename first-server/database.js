@@ -15,6 +15,13 @@ Database.prototype.find = function() {
   return this.cosmicBeverages;
 };
 
+Database.prototype.findOne = function(id){
+    let foundBeverage = this.cosmicBeverages.find(beverage => {
+        return beverage._id === id;
+    })
+    return foundBeverage;
+}
+
 Database.prototype.save = function(beverage) {
   const newBeverage = new CosmicBeverage(beverage);
   this.cosmicBeverages.push(newBeverage);
