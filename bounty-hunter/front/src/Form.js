@@ -6,8 +6,8 @@ export default class Form extends Component {
     super();
     this.state = {
       bounties: [],
-      fname: "",
-      lname: "",
+      fName: "",
+      lName: "",
       living: true,
       bountyAmount: "",
       type: "Sith"
@@ -20,11 +20,11 @@ export default class Form extends Component {
   }
 
   fnameOnChange(e) {
-    this.setState({ fname: e.target.value });
+    this.setState({ fName: e.target.value });
   }
 
   lnameOnChange(e) {
-    this.setState({ lname: e.target.value });
+    this.setState({ lName: e.target.value });
   }
 
   bountyAmountOnChange(e) {
