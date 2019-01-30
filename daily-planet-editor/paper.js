@@ -19,7 +19,7 @@ function whoWins(isThereKryptonite, enemyName) {
     }
 }
 
-for (var i = 0;i < enemies.length; i++) {
+for (var i =\ 0;i < enemies.length; i++) {
     var isThereKryptonite;
     if (i % 2 === 0) {
         isThereKryptonite = true;
