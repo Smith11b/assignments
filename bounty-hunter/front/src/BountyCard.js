@@ -1,12 +1,15 @@
-import React from 'react'
+import React from 'react';
+import axios from "axios";
 
-function BountyCard(props) {
+function BountyCard({fName, lName, living, type, bounty, _id, ...props}) {
     return (
         <div className = "bounty-card">
-            <h1>{props.fName}</h1>
-            <h1>{props.lName}</h1>
-            <h2>{props.living}</h2>
-            <h3>{props.type}</h3>
+            <h1>{fName}</h1>
+            <h1>{lName}</h1>
+            <h2>{bounty}</h2>
+            <h2>{living}</h2>
+            <h3>{type}</h3>
+            <button onClick = {() => props.bountyDelete(_id)}>X</button>
         </div>
     )
 }

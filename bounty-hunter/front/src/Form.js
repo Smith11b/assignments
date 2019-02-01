@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import FormList from "./FormList";
 
 export default class Form extends Component {
   constructor() {
@@ -9,7 +10,7 @@ export default class Form extends Component {
       fName: "",
       lName: "",
       living: true,
-      bountyAmount: "",
+      bounty: "",
       type: "Sith"
     };
     this.fnameOnChange = this.fnameOnChange.bind(this);
@@ -17,6 +18,9 @@ export default class Form extends Component {
     this.submitHandler = this.submitHandler.bind(this);
     this.bountyAmountOnChange = this.bountyAmountOnChange.bind(this);
     this.typeOnChangeHandler = this.typeOnChangeHandler.bind(this);
+    this.deleteBounty = this.deleteBounty.bind(this)
+    
+
   }
 
   fnameOnChange(e) {
@@ -27,14 +31,26 @@ export default class Form extends Component {
     this.setState({ lName: e.target.value });
   }
 
-  bountyAmountOnChange(e) {
-    this.setState({ bountyAmount: e.target.value });
+  async deleteBounty(id){
+      await axios.delete(`/bounties/${id}`)
+      const bounties =  this.state.bounties.filter(bounty => bounty._id !== id)
+      this.setState({bounties});
   }
 
-  submitHandler(e) {
+  bountyAmountOnChange(e) {
+    this.setState({ bounty: e.target.value });
+  }
+
+  async submitHandler(e) {
     e.preventDefault();
     const newBounty = { ...this.state };
-    axios.post("/bounties", newBounty);
+    await axios.post("/bounties", newBounty);
+    const bounties = await axios
+      .get("/bounties")
+      .catch(err => console.log("Couldn't find any bounties"));
+      this.setState({
+          bounties : bounties.data
+      })
   }
 
   typeOnChangeHandler(e) {
@@ -66,16 +82,13 @@ export default class Form extends Component {
             onChange={this.bountyAmountOnChange}
           />
           <label for="type">Affiliation</label>
-          <select onChange={this.typeOnChangeHandler}name="type">
-            <option value="Sith">
-              Sith
-            </option>
-            <option value="Jedi">
-              Jedi
-            </option>
+          <select onChange={this.typeOnChangeHandler} name="type">
+            <option value="Sith">Sith</option>
+            <option value="Jedi">Jedi</option>
           </select>
           <button onClick={this.submitHandler}>Submit</button>
         </form>
+        <FormList bounties={this.state.bounties} delete = {this.deleteBounty} />
       </div>
     );
   }
