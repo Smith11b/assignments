@@ -37,8 +37,6 @@ var lootDrops = [{                                             // This is an arr
     }
 }]
 
-
-
 function Player() {                                      // The player prototype
     this.name = playerName;
     this.hp = 100;
