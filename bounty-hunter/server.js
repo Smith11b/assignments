@@ -21,11 +21,7 @@ app.post('/bounties', (req, res) =>{
     return res.send(database.save(req.body))
 })
 
-app.delete('/bounties/:id', (req, res) =>{
-    let id = req.params.id;
-    database.findByIDAndRemove(id);
-    return res.status(204).send();
-})
+
 
 app.put('/bounties/:id', (req, res) => {
     let id = req.params.id;
