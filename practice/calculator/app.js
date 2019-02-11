@@ -26,6 +26,11 @@ function clearInput(){
     document.getElementById("exp").value = " ";
 }
 
+function backSpace(){
+    let value = document.getElementById("exp").value;
+    value.substring(0, value.length)
+}
+
 
 function equals(){
     var expression = document.getElementById("exp").value;
@@ -41,6 +46,11 @@ function equals(){
     console.log(operation);
     
     
+    
 }
+
+
+
+
 
 
